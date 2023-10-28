@@ -1,26 +1,23 @@
-import java.util.Scanner;
 import java.lang.Math;
 
 class sinusFaktorijel {
     public static void main(String[] args) {
-        Scanner ulaz=new Scanner(System.in);
-        int n=ulaz.nextInt();
-        faktorijel(n);
-        sinus(n);
-
+        int f=faktorijel(Integer.valueOf(args[0]));
+        double s=sinus(Double.valueOf(args[1]));
+        System.out.println("Faktorijel: " +f+"Sinus: "+s);
     }
-    static void faktorijel(int n)
+    static int faktorijel(int n)
     {
         int sum=1;
         for (int i=n;i>0;i--)
         {
             sum*=i;
         }
-        System.out.println(sum);
+        return sum;
     }
-    static void sinus(int n)
+    static double sinus(double n)
     {
         double a = Math.toRadians(n);
-        System.out.println(Math.sin(a));
+        return Math.sin(a);
     }
 }
