@@ -1,3 +1,5 @@
+package ba.unsa.etf.rpr;
+
 import java.lang.Math;
 
 class sinusFaktorijel {
