@@ -130,9 +130,6 @@ public class Program {
     }
 
     private static void popuniPodatke(){
-        imenik.dodaj("Eldar", new FiksniBroj(Grad.SARAJEVO, "225-883"));
-        imenik.dodaj("Dino", new FiksniBroj(Grad.ZENICA, "225-884"));
-        imenik.dodaj("Amir", new MobilniBroj(61, "225-885"));
-        imenik.dodaj("Chris", new MedunarodniBroj("+44", "7768878794"));
+        imenik.dodaj("Amar", new FiksniBroj(Grad.SARAJEVO, "225-883"));
     }
 }
