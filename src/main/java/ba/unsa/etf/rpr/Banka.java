@@ -4,22 +4,29 @@ import java.util.List;
 
 public class Banka {
     private long brojRacuna;
-    public Banka(){}
-    public List<Korisnik> kreirajNovogKorisnika(String ime,String prezime){
-        List<Korisnik>korisnici=new ArrayList<Korisnik>();
-        return korisnici;
+    private List<Korisnik> korisnici;
+    private List<Uposlenik> uposlenici;
+
+    public Banka() {
+        this.korisnici = new ArrayList<Korisnik>();
+        this.uposlenici = new ArrayList<Uposlenik>();
     }
-    public List<Korisnik> kreirajNovogKorisnika(String ime,String prezime){
-        List<Korisnik>korisnici=new ArrayList<Korisnik>();
-        return korisnici;
+    public Korisnik kreirajNovogKorisnika(String ime,String prezime){
+        Korisnik korisnik=new Korisnik(ime, prezime);
+        return korisnik;
     }
-    public List<Uposlenik> kreirajNovogUposlenika(String ime,String prezime){
-        List<Uposlenik>uposlenici=new ArrayList<Uposlenik>();
-        return uposlenici;
+    public Uposlenik kreirajNovogUposlenika(String ime,String prezime){
+        Uposlenik uposlenik=new Uposlenik(ime, prezime);
+        return uposlenik;
     }
     public Racun kreirajRacunZaKorisnika(Korisnik korisnik)
     {
-        Racun racun(dodajRacun(Racun racun),korisnik);
+        Racun racun = null;
+        for (Korisnik k:korisnici){
+            if (k==korisnik){
+                racun = new Racun(325324L, k);
+            }
+        }
         return racun;
     }
 }
