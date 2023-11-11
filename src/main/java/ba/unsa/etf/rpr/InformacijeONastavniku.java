@@ -1,7 +1,14 @@
 package ba.unsa.etf.rpr;
 
-public class InformacijeONastavniku extends LicneInformacije{
+import java.util.List;
+
+public class InformacijeONastavniku extends LicneInformacije implements MozeOcijeniti{
     private String ime,prezime,titula;
+    private List<Ocjena> ocjene;
+
+    public List<Ocjena> getOcjene() {
+        return ocjene;
+    }
 
     public String getIme() {
         return ime;
@@ -25,5 +32,11 @@ public class InformacijeONastavniku extends LicneInformacije{
 
     public void setTitula(String titula) {
         this.titula = titula;
+    }
+
+    @Override
+    public Ocjena ocijeni(int x) {
+        Ocjena novaOcjena = new Ocjena(new LicneInformacije(), x);
+        return novaOcjena;
     }
 }
