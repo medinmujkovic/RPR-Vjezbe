@@ -1,4 +1,5 @@
 package ba.unsa.etf.rpr;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
@@ -9,25 +10,28 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ImenikTest {
 
+    @BeforeAll
+    public static void setup(){
+        imenik.dodaj("Amar", new FiksniBroj(Grad.SARAJEVO, "225-883"));
+        imenik.dodaj("Almina", new FiksniBroj(Grad.SARAJEVO, "245-123"));
+    }
     @Test
-    void dodaj() {
-        assertThrows(BrojException.class, new Executable() {
-            @Override
-            public void execute() throws Throwable {
-                new
-            }
-        });
+    void dodajPositive() {
+        TelefonskiBroj broj = new MobilniBroj(61, "507-855");
+        imenik.dodaj("Jure", broj);
+        String brojStr = imenik.dajBroj("Jure");
+        assertEquals(brojStr, "061/507-855");
     }
 
     @Test
     void dajImeFound() {
-        String broj=imenik.dajIme("225-883");
-        assertEquals(broj, "Amar");
+        String ime=imenik.dajIme(new FiksniBroj(Grad.SARAJEVO, "245-123"));
+        assertEquals(ime, "Almina");
     }
 
     @Test
     void dajImeNotFound() {
-        String broj=imenik.dajIme("225-883");
-        assertEquals(broj, "Amar");
+        String ime=imenik.dajIme(new FiksniBroj(Grad.SARAJEVO, "245-432"));
+        assertNull(ime);
     }
 }
