@@ -3,9 +3,9 @@ package ba.unsa.etf.rpr;
 public class Laptop {
     private String brend,model,procesor,grafickaKartica;
     private double cijena,velicinaEkrana;
-    private int ram,add,sdd;
+    private int ram,hdd,sdd;
 
-    public Laptop(String brend, String model, String procesor, String grafickaKartica, double cijena, double velicinaEkrana, int ram, int add, int sdd) {
+    public Laptop(String brend, String model, String procesor, String grafickaKartica, double cijena, double velicinaEkrana, int ram, int hdd, int sdd) {
         this.brend = brend;
         this.model = model;
         this.procesor = procesor;
@@ -13,7 +13,7 @@ public class Laptop {
         this.cijena = cijena;
         this.velicinaEkrana = velicinaEkrana;
         this.ram = ram;
-        this.add = add;
+        this.hdd = hdd;
         this.sdd = sdd;
     }
 
@@ -73,12 +73,12 @@ public class Laptop {
         this.ram = ram;
     }
 
-    public int getAdd() {
-        return add;
+    public int getHdd() {
+        return hdd;
     }
 
-    public void setAdd(int add) {
-        this.add = add;
+    public void setHdd(int hdd) {
+        this.hdd = hdd;
     }
 
     public int getSdd() {

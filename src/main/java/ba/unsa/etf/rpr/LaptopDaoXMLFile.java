@@ -3,14 +3,18 @@ package ba.unsa.etf.rpr;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class LaptopDaoXMLFile extends LaptopDao{
 
-    private File file;
-    private ArrayList<Laptop> laptopi;
+    public File file;
+    public ArrayList<Laptop> laptopi;
+
+    public LaptopDaoXMLFile(File file, ArrayList<Laptop> laptopi) {
+        this.file = file;
+        this.laptopi = laptopi;
+    }
 
     @Override
     public void dodajLaptopUListu(Laptop laptop) {

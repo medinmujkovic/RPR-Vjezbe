@@ -11,8 +11,14 @@ import java.util.ArrayList;
 
 public class LaptopDaoJSONFile extends LaptopDao {
 
-    private File file;
-    private ArrayList<Laptop> laptopi;
+    public File file;
+    public ArrayList<Laptop> laptopi;
+
+    public LaptopDaoJSONFile(File file, ArrayList<Laptop> laptopi) {
+        this.file = file;
+        this.laptopi = laptopi;
+    }
+
     @Override
     public void dodajLaptopUListu(Laptop laptop) {
         laptopi.add(laptop);
