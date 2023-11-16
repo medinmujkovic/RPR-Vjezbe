@@ -39,7 +39,9 @@ public class Main {
         nastavnici.add(almina);
         nastavnici.add(buza);
         nastavnici.add(juric);
-
+        LicneInformacije ja=new LicneInformacije();
+        ja.setIme("Medin");
+        ja.setPrezime("Mujkovic");
 
         if(n.equals("Nastavnik"))
         {
@@ -47,8 +49,7 @@ public class Main {
                 System.out.println("Ocijeni predmet " + predmeti.get(i).getNaziv());
                 Scanner unos=new Scanner(System.in);
                 int x=unos.nextInt();
-                Ocjena ocjena=new Ocjena(ja,x);
-                predmeti.get(i).addOcjene(ocjena);
+                predmeti.get(i).ocijeni(x);
 
             }
             for (int i=0;i<predmeti.size();i++)
@@ -60,7 +61,6 @@ public class Main {
                 }
             }
         }
-
         else if (n.equals("Student")) {
             for(int i=0;i<predmeti.size();i++) {
                 System.out.println("Ocijeni predmet " + predmeti.get(i).getNaziv());
